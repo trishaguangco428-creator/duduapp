@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Dudu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom right, #ffe6e6, #ffd6e8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: auto;
+      gap: 20px;
+    }
+
+    /* Login button at top */
+    .top-bar {
+      width: 100%;
+      padding: 15px;
+      text-align: right;
+      background: rgba(255, 192, 203, 0.8);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .top-bar a {
+      background: #ff6b81;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .top-bar a:hover {
+      background: #ff3e61;
+    }
+
+    .container {
+      margin-top: 80px; /* space for fixed login bar */
+    }
+
+    .question, .letter-box {
+      background: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), inset 0 0 15px rgba(255, 255, 255, 0.5);
+      padding: 2rem;
+      width: 100%;
+      max-width: 450px;
+      border: 1px solid #ffb6c1; /* thinner border */
+      text-align: center;
+    }
+
+    .question h2 {
+      margin-bottom: 1rem;
+      color: #c71585;
+    }
+
+    .question img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      background: #ffc0cb;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #ff8fb1;
+      transform: scale(1.05);
+    }
+
+    .letter-box h3 {
+      color: #c71585;
+      margin-bottom: 1rem;
+    }
+
+    .letter-box p {
+      color: #6a4e55;
+      line-height: 1.5;
+      font-size: 1rem;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login link at top -->
+  <div class="top-bar">
+    <a href="login.html">Login</a>
+  </div>
+
+  <div class="container">
+    <!-- First box with picture and buttons -->
+    <div class="question">
+      <h2>Would you be my forever?</h2>
+      <img src="dudu.png" alt="dudu" />
+      <button onclick="playAudio()">💌 Play Audio</button>
+      <button onclick="respondYes()">Yes 😻</button>
+    </div>
+
+    <!-- Second box with love letter -->
+    <div class="letter-box">
+      <h3>💖 My Message for You 💖</h3>
+      <p>
+        Dudu, thank you for being such an important part of my life.  
+        I hope you are enjoying your special day!  
+        One thing I can promise you is to always stay loyal, faithful, and committed to you.  
+        You are the greatest gift I have ever received, and nothing makes me happier than seeing your beautiful smile.  
+        Please keep smiling every day — it’s the most precious thing in the world to me.  
+        I love you so much! 💕
+      </p>
+    </div>
+  </div>
+
+  <audio id="valentineAudio" src="Just Give me Your Forever.mp3"></audio>
+
+  <!-- 🎊 Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById("valentineAudio");
+      audio.volume = 0.8;
+      audio.play();
+    }
+
+    function respondYes() {
+      window.location.href = "RikaHoujo(Otto).html";
+    }
+
+    window.onload = function () {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    };
+  </script>
+</body>
+</html>
